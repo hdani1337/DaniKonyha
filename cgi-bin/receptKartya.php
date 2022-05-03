@@ -22,7 +22,7 @@ function kartya($sor)
                                         <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/>
                                         </svg> ' . $sor[4] . '</p>
 
-                                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#Modal' . $sor[7] . '">Mutasd a receptet</button>
+                                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#Modal' . $sor[7] . '" title="A recept megnyitása">Mutasd a receptet</button>
                                         
                                     </div>
                                 </div>
@@ -40,8 +40,8 @@ function kartya($sor)
                                     <!-- Modal body -->
                                     <div class="modal-body pb-0">
                                         <img class="img-fluid rounded" src="wp-content/' . $sor[1] . '" alt="' . $sor[1] . '">
-                                        <br><br><strong>Hozzávalók: </strong>' . $sor[2] . '
-                                        <br><br><strong>Elkészítés: </strong>' . $sor[3] . '
+                                        <br><br><strong>Hozzávalók: </strong><ul>'; foreach (explode(",","$sor[2]") as $val) echo '<li>' . $val . '</li>';  echo '</ul>
+                                        <strong>Elkészítés: </strong>' . $sor[3] . '
 
                                         <br><br>
                                         <!--FELTÖLTŐ EMBER IKONNAL-->
@@ -59,7 +59,7 @@ function kartya($sor)
 
                                     <!-- Modal footer -->
                                     <div class="modal-footer pt-0">
-                                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Bezárás</button>
+                                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal" title="A recept bezárása" >Bezárás</button>
                                     </div>
 
                                     </div>

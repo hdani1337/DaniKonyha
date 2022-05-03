@@ -2,11 +2,11 @@
 //Kezdőlapon a legújabb recept
 function mainKartya($recept){
     echo '
-                        <div class="col-lg-4 p-4">
-                            <div class="card alert-warning">
+                        <div class="col-lg-4 pt-4">
+                            <div class="card alert-warning" style="height: 100%">
                                 <img class="card-img-top" style="height: 50vh; object-fit: cover;" width="100%" src="wp-content/' . $recept[1] . '" alt="' . $recept[1] .'">
                                 <div class="card-body">
-                                    <h4 class="card-title">'.$recept[0].' <span class="badge bg-primary">Új</span></h4>
+                                    <h1 class="card-title">'.$recept[0].' <span class="badge bg-primary">Új</span></h1>
                                     <p class="card-text">'.'
 
                                     <!--FELTÖLTŐ EMBER IKONNAL-->
@@ -39,8 +39,8 @@ function mainKartya($recept){
                                 <!-- Modal body -->
                                 <div class="modal-body pb-0">
                                     <img class="img-fluid rounded" src="wp-content/' . $recept[1] . '" alt="' . $recept[1] .'">
-                                    <br><br><strong>Hozzávalók: </strong>'.$recept[2].'
-                                    <br><br><strong>Elkészítés: </strong>'.$recept[3].'
+                                    <br><br><strong>Hozzávalók: </strong><ul>'; foreach (explode(",","$recept[2]") as $val) echo '<li>' . $val . '</li>';  echo '</ul>
+                                    <strong>Elkészítés: </strong>'.$recept[3].'
 
                                     <br><br>
                                     <!--FELTÖLTŐ EMBER IKONNAL-->
